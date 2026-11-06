@@ -1,5 +1,13 @@
 # Didáctica Aumentada 3.0 — El Diario
 
+> ## Subir a GitHub en 6 pasos
+> 1. Creá un repositorio nuevo en GitHub (público).
+> 2. *Add file → Upload files* y arrastrá **todo el contenido** de esta carpeta (no la carpeta en sí). Tiene que incluir la carpeta oculta `.github`; si tu sistema no la muestra, activá "mostrar archivos ocultos" o creala a mano con *Add file → Create new file* y el nombre `.github/workflows/publicar.yml` (pegando el contenido del archivo `publicar.yml`). Después *Commit changes*.
+> 3. *Settings → Pages → Source:* **GitHub Actions**.
+> 4. *Settings → Secrets and variables → Actions → New repository secret* (pestaña **Secrets**): nombre `BEHOLD_FEED_URL`, valor = la dirección de tu feed de Behold.
+> 5. *Actions → Actualizar y publicar el diario → Run workflow*.
+> 6. Cuando termine (verde), abrí `https://TU-USUARIO.github.io/NOMBRE-DEL-REPOSITORIO/`.
+
 Diario online estático para **GitHub Pages**. Muestra automáticamente las publicaciones de Instagram y permite sumar notas propias.
 Funciona en celulares, tablets y computadoras (Chrome, Edge, Firefox, Safari y Opera actuales), con modo oscuro automático.
 
