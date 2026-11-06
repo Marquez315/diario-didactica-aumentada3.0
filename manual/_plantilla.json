@@ -1,0 +1,11 @@
+{
+  "title": "Título de la nota (obligatorio)",
+  "summary": "Bajada: una o dos frases para la portada.",
+  "body": "Texto completo.\n\nSeparar los párrafos con una línea en blanco.",
+  "category": "Sección",
+  "author": "Nombre",
+  "date": "2026-11-05T12:00:00-03:00",
+  "image": "https://… o img/mi-foto.jpg",
+  "tags": ["etiqueta1", "etiqueta2"],
+  "instagram_url": "https://www.instagram.com/p/…"
+}

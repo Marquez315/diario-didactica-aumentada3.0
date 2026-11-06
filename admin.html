@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <title>Redacción — Didáctica Aumentada 3.0</title>
+  <meta name="theme-color" content="#0b6b63">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <h1 class="brand"><a href="index.html">Didáctica Aumentada <span>3.0</span></a></h1>
+      <p class="tagline">Redacción</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="admin">
+      <h1>Publicar una noticia</h1>
+      <p class="note">Completá el formulario y apretá <strong>Publicar en GitHub</strong>. Se abre GitHub con la nota ya cargada; solo tenés que
+        confirmar con <em>Commit changes</em> (hace falta tener permiso de escritura en el repositorio). En 1–2 minutos aparece en el diario.</p>
+
+      <form id="f" onsubmit="return false" autocomplete="off">
+        <div class="field"><label for="title">Título *</label><input id="title" required maxlength="160"></div>
+        <div class="field"><label for="summary">Bajada / resumen</label><input id="summary" maxlength="280"><small>Una o dos frases que aparecen en la portada.</small></div>
+        <div class="field"><label for="body">Texto de la nota</label><textarea id="body"></textarea><small>Separá los párrafos con una línea en blanco. Los enlaces se vuelven clickeables.</small></div>
+        <div class="row">
+          <div class="field"><label for="category">Sección</label><input id="category" placeholder="Ej.: Novedades, Opinión, Eventos" maxlength="40"></div>
+          <div class="field"><label for="author">Autor/a</label><input id="author" maxlength="80"></div>
+        </div>
+        <div class="field"><label for="image">Imagen (URL o ruta)</label><input id="image" placeholder="https://… o img/mi-foto.jpg"><small>Para usar una foto propia, subila a la carpeta <code>img/</code> del repositorio y escribí su ruta.</small></div>
+        <div class="row">
+          <div class="field"><label for="tags">Etiquetas</label><input id="tags" placeholder="separadas por coma"></div>
+          <div class="field"><label for="igurl">Enlace de una publicación de Instagram</label><input id="igurl" type="url" placeholder="https://www.instagram.com/p/…"><small>Pegá el enlace del post y se muestra completo dentro de la nota. Si lo completás, el texto es opcional.</small></div>
+        </div>
+
+        <h2>Dónde publicar</h2>
+        <div class="row">
+          <div class="field"><label for="repo">Repositorio (usuario/repositorio)</label><input id="repo" placeholder="usuario/diario"></div>
+          <div class="field"><label for="branch">Rama</label><input id="branch" value="main"></div>
+        </div>
+
+        <div class="actions" style="border:0;padding-top:0">
+          <button class="btn" id="pub" type="button">Publicar en GitHub</button>
+          <button class="btn ghost" id="copy" type="button">Copiar JSON</button>
+        </div>
+      </form>
+
+      <h2>Vista previa del archivo</h2>
+      <textarea class="out" id="out" readonly aria-label="Contenido del archivo JSON"></textarea>
+      <p class="small" id="fname"></p>
+      <p><a href="index.html">← Volver al diario</a></p>
+    </div>
+  </main>
+
+  <script>
+  (function () {
+    'use strict';
+    var $ = function (id) { return document.getElementById(id); };
+    var ids = ['title', 'summary', 'body', 'category', 'author', 'image', 'tags', 'igurl', 'repo', 'branch'];
+
+    // Detecta usuario/repo si el sitio está en GitHub Pages (usuario.github.io/repo)
+    function guessRepo() {
+      var h = location.hostname, p = location.pathname.split('/').filter(Boolean);
+      if (/\.github\.io$/.test(h)) {
+        var user = h.split('.')[0];
+        var repo = p.length && p[0] !== 'admin.html' ? p[0] : user + '.github.io';
+        return user + '/' + repo;
+      }
+      return '';
+    }
+    try { var saved = localStorage.getItem('diario-repo'); if (saved) $('repo').value = saved; } catch (e) {}
+    if (!$('repo').value) $('repo').value = guessRepo();
+
+    function slug(s) {
+      s = String(s || '').toLowerCase();
+      try { s = s.normalize('NFD').replace(/[̀-ͯ]/g, ''); } catch (e) {}
+      return s.replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60) || 'nota';
+    }
+    function build() {
+      var now = new Date();
+      var tags = $('tags').value.split(',').map(function (t) { return t.trim().replace(/^#/, ''); }).filter(Boolean);
+      var o = { title: $('title').value.trim(), summary: $('summary').value.trim(), body: $('body').value.trim(),
+        category: $('category').value.trim(), author: $('author').value.trim(), date: now.toISOString(),
+        image: $('image').value.trim(), tags: tags, instagram_url: $('igurl').value.trim() };
+      Object.keys(o).forEach(function (k) { if (o[k] === '' || (Array.isArray(o[k]) && !o[k].length)) delete o[k]; });
+      var name = now.toISOString().slice(0, 10) + '-' + slug(o.title) + '.json';
+      return { json: JSON.stringify(o, null, 2) + '\n', name: name, ok: !!(o.title && (o.body || o.instagram_url)) };
+    }
+    function refresh() { var b = build(); $('out').value = b.json; $('fname').textContent = 'Archivo: manual/' + b.name; }
+    ids.forEach(function (i) { $(i).addEventListener('input', refresh); });
+    refresh();
+
+    $('pub').addEventListener('click', function () {
+      var b = build();
+      if (!b.ok) { alert('Completá el título y el texto (o el enlace de Instagram).'); return; }
+      var repo = $('repo').value.trim(), branch = $('branch').value.trim() || 'main';
+      if (!/^[\w.-]+\/[\w.-]+$/.test(repo)) { alert('Indicá el repositorio con el formato usuario/repositorio.'); return; }
+      try { localStorage.setItem('diario-repo', repo); } catch (e) {}
+      var url = 'https://github.com/' + repo + '/new/' + encodeURIComponent(branch) + '/manual?filename=' +
+        encodeURIComponent(b.name) + '&value=' + encodeURIComponent(b.json);
+      if (url.length > 7500) { alert('La nota es muy larga para enviarla por enlace. Usá "Copiar JSON" y pegalo en un archivo nuevo dentro de la carpeta manual/.'); return; }
+      window.open(url, '_blank', 'noopener');
+    });
+    $('copy').addEventListener('click', function () {
+      var b = build(); $('out').select();
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(b.json).then(function () { $('copy').textContent = '¡Copiado!'; });
+      else { try { document.execCommand('copy'); $('copy').textContent = '¡Copiado!'; } catch (e) {} }
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Didáctica Aumentada 3.0 — El Diario</title>
+  <meta name="description" content="Noticias de Didáctica Aumentada 3.0: publicaciones de Instagram y notas propias de la redacción.">
+  <meta name="theme-color" content="#0b6b63">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Didáctica Aumentada 3.0 — El Diario">
+  <meta property="og:description" content="Todas las noticias de @didactica_aumentada3.0 y notas de la redacción.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230b6b63'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='white' font-family='Georgia,serif' font-weight='bold'%3EDA%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#app">Saltar al contenido</a>
+
+  <header class="masthead">
+    <div class="wrap">
+      <div class="masthead-top">
+        <span id="today" class="today"></span>
+        <a class="ig-link" href="https://www.instagram.com/didactica_aumentada3.0/" target="_blank" rel="noopener noreferrer">@didactica_aumentada3.0</a>
+      </div>
+      <h1 class="brand"><a href="#/">Didáctica Aumentada <span>3.0</span></a></h1>
+      <p class="tagline">El Diario · noticias, novedades y reflexiones</p>
+    </div>
+  </header>
+
+  <nav class="toolbar" aria-label="Filtros">
+    <div class="wrap toolbar-inner">
+      <div id="chips" class="chips" role="tablist"></div>
+      <form id="search" class="search" role="search" onsubmit="return false">
+        <label class="sr" for="q">Buscar noticias</label>
+        <input id="q" type="search" placeholder="Buscar…" autocomplete="off">
+      </form>
+    </div>
+  </nav>
+
+  <main id="app" class="wrap" tabindex="-1">
+    <p class="loading">Cargando noticias…</p>
+    <noscript><p class="loading">Este diario necesita JavaScript habilitado para mostrar las noticias.</p></noscript>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> Didáctica Aumentada 3.0. Las publicaciones de Instagram pertenecen a sus autores y se muestran con enlace a la publicación original.</p>
+      <p id="updated" class="small"></p>
+      <p class="small"><a href="admin.html">Redacción: publicar una noticia</a></p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

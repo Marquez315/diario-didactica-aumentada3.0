@@ -1,0 +1,36 @@
+{
+  "generated": "2026-11-06T04:48:02.066Z",
+  "items": [
+    {
+      "id": "m-2026-11-05-bienvenidos-al-diario",
+      "source": "manual",
+      "title": "Bienvenidos a El Diario de Didáctica Aumentada 3.0",
+      "summary": "Un espacio para reunir en un solo lugar todas las novedades del proyecto y las notas de la redacción.",
+      "body": "Este diario muestra automáticamente cada publicación de nuestro Instagram y, además, permite sumar notas propias que no están en las redes.\n\nPodés filtrar por origen, buscar por palabra y compartir cualquier noticia con su enlace.\n\n(Nota de ejemplo: podés borrar este archivo de la carpeta manual/ cuando quieras.)",
+      "category": "Novedades",
+      "author": "Redacción",
+      "date": "2026-11-05T15:00:00.000Z",
+      "images": [],
+      "instagram_url": "",
+      "tags": [
+        "bienvenida",
+        "didacticaaumentada"
+      ]
+    },
+    {
+      "id": "m-2026-11-04-como-publicar-una-nota",
+      "source": "manual",
+      "title": "Cómo publicar una nota propia en el diario",
+      "summary": "Tres pasos: completar el formulario de Redacción, confirmar en GitHub y esperar un minuto.",
+      "body": "1) Entrá a la página \"Redacción\" (enlace al pie del diario) y completá título, texto y, si querés, una imagen.\n\n2) Apretá \"Publicar en GitHub\" y confirmá con \"Commit changes\".\n\n3) En uno o dos minutos la nota aparece en la portada.\n\n(Nota de ejemplo: borrala cuando ya no la necesites.)",
+      "category": "Guías",
+      "author": "Redacción",
+      "date": "2026-11-04T15:00:00.000Z",
+      "images": [],
+      "instagram_url": "",
+      "tags": [
+        "ayuda"
+      ]
+    }
+  ]
+}
