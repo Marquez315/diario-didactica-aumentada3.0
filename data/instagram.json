@@ -1,6 +1,57 @@
 {
-  "fetched": "2026-11-26T16:53:42.249Z",
+  "fetched": "2026-11-27T01:43:32.603Z",
   "items": [
+    {
+      "id": "ig-18114539909574230",
+      "source": "instagram",
+      "title": "🔗 LINK DEL JUEGO EN EL PERFIL",
+      "summary": "🌳 ¡Ya podés jugar \"El secreto del ombú\"! 🎮 Un videojuego educativo gratuito, de aventura gráfica con estilo pixel-art, basado en el libro digital \"El secreto del ombú\" del ISFD \"Gob. Virasoro\" (Narrativas…",
+      "body": "🔗 LINK DEL JUEGO EN EL PERFIL \n\n🌳 ¡Ya podés jugar \"El secreto del ombú\"! 🎮\n\nUn videojuego educativo gratuito, de aventura gráfica con estilo pixel-art, basado en el libro digital \"El secreto del ombú\" del ISFD \"Gob. Virasoro\" (Narrativas Inteligentes), Gobernador Virasoro, Corrientes.\n\nAcompañá a Tomás, de 10 años, en su investigación sobre qué hizo crecer a la ciudad. El Viejo Ombú de la Plaza Libertad tiene mucho para contarle sobre la naturaleza, el trabajo y el cuidado de las personas.\n\n👉 Mirá, hablá, usá, cogé y dale cosas a los personajes.\n👉 Sumá hasta 800 puntos de IQ tomando decisiones de cuidado.\n👉 Llevalo al aula: sirve para Sociales, Naturales, Lengua, Informática y Ética.\n👉 Se creó con IA (un prompt en Claude). Dentro del juego está la sección \"Cómo se hizo\" con los prompts para copiar.\n\n📖 Libro original (autoría: Camila Araceli Marquez, Nahiara Daniela Castillo y Fabiana Agustina Franco): https://superior.mec.gob.ar/narrativasinteligentes/el-secreto-del-ombu\n\n💾 Guardá este post para tu próxima clase y etiquetá a una persona docente.\n\n#ElSecretoDelOmbú #GobernadorVirasoro #Corrientes #NarrativasInteligentes #EducaciónDigital",
+      "date": "2026-11-26T07:47:10+0000",
+      "images": [
+        "img/ig/18115614296613512.jpg",
+        "img/ig/18132418738891586.jpg",
+        "img/ig/17885330274630004.jpg",
+        "img/ig/18146069026608435.jpg",
+        "img/ig/17958307440274698.jpg",
+        "img/ig/18126117817941988.jpg",
+        "img/ig/18018422256004842.jpg"
+      ],
+      "url": "https://www.instagram.com/p/DgMmkH9FjEE/",
+      "tags": [
+        "ElSecretoDelOmbú",
+        "GobernadorVirasoro",
+        "Corrientes",
+        "NarrativasInteligentes",
+        "EducaciónDigital"
+      ]
+    },
+    {
+      "id": "ig-18118163159035428",
+      "source": "instagram",
+      "title": "EN EL PERFIL - LINK DEL JUEGO",
+      "summary": "Creé un juego de fútbol argentino conversando con Claude ⚽🇦🇷 Se llama Fútbol Argentino Pixel: 11 vs 11, 12 equipos, tres modos (Jugar, Director Técnico y Online), hinchada, bombo y cantitos. Todo en un solo archivo…",
+      "body": "EN EL PERFIL - LINK DEL JUEGO\nCreé un juego de fútbol argentino conversando con Claude ⚽🇦🇷\nSe llama Fútbol Argentino Pixel: 11 vs 11, 12 equipos, tres modos (Jugar, Director Técnico y Online), hinchada, bombo y cantitos. Todo en un solo archivo HTML.\nEl prompt lo encontrarán en el menú del juego.\n\n¿Por qué sirve crear juegos en el aula?\n1️⃣ Se pasa de consumir a crear\n2️⃣ El error es parte del proceso: probar, observar, pedir el cambio y volver a probar\n3️⃣ Se cruzan matemática, lengua, música, arte, educación física y tecnología\n4️⃣ Se parte de lo que les apasiona\n5️⃣ Se juega, se comparte y se colabora\n\n💡 Idea para empezar: que cada grupo elija un deporte o un tema de la escuela y arme su propio juego con ayuda de la IA. Etiquétanos luego de crear el juego😎.\n\n📌 Guardalo y compartilo con un colega. ¿Qué juego haría tu curso? Contanos en los comentarios 👇\n\n#EducaciónDigital #IAenelAula #GamificaciónEducativa #AprenderHaciendo #PensamientoComputacional",
+      "date": "2026-11-26T06:27:14+0000",
+      "images": [
+        "img/ig/18145093048721028.jpg",
+        "img/ig/18232102924330013.jpg",
+        "img/ig/18036345971905373.jpg",
+        "img/ig/17920398279263382.jpg",
+        "img/ig/18124920515100038.jpg",
+        "img/ig/18066647585798801.jpg",
+        "img/ig/18105686465542888.jpg",
+        "img/ig/18477589228142958.jpg"
+      ],
+      "url": "https://www.instagram.com/p/DgMdaoZFu1X/",
+      "tags": [
+        "EducaciónDigital",
+        "IAenelAula",
+        "GamificaciónEducativa",
+        "AprenderHaciendo",
+        "PensamientoComputacional"
+      ]
+    },
     {
       "id": "ig-18106958609633474",
       "source": "instagram",
@@ -71,13 +122,16 @@
       "source": "instagram",
       "title": "https://superior.mec.gob.ar/narrativasinteligentes/el-secreto-del-ombu",
       "summary": "",
-      "body": "https://superior.mec.gob.ar/narrativasinteligentes/el-secreto-del-ombu#hojear",
+      "body": "https://superior.mec.gob.ar/narrativasinteligentes/el-secreto-del-ombu#hojear #narrativainteligente #isfdvirasoro",
       "date": "2026-11-18T18:10:32+0000",
       "images": [
         "img/ig/17890417224486121.jpg"
       ],
       "url": "https://www.instagram.com/p/Df5Hhi8qmgR/",
-      "tags": []
+      "tags": [
+        "narrativainteligente",
+        "isfdvirasoro"
+      ]
     },
     {
       "id": "ig-18121992268764258",
